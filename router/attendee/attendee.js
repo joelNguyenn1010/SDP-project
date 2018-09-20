@@ -36,4 +36,6 @@ router.get('/attendee/navbar', (req, res) => {
 
 
 
+
+
 module.exports = router;

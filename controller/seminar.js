@@ -50,16 +50,15 @@ seminarController.findOneSeminar = (req, res, next) => {
 }
 
 seminarController.updateOneSeminar = (req, res, next) => {
-    let updateSeminar = new SeminarBuilder(req.body.name)
-    .buildAbstract(req.body.abstract)
-    .buildVenue(req.body.venue)
-    .setDate(req.body.date)
-    .setTime(req.body.time)
-    .setCapacity(req.body.capacity)
-    .setDuration(req.body.duration)
-    .buildSpeaker(req.body.speaker)
-    .build();
-
+    let updateSeminar = {
+        abstract: req.body.abstract,
+        venue: req.body.venue,
+        date: req.body.date,
+        time: req.body.time,
+        capacity: req.body.capacity,
+        duration: req.body.duration,
+        speaker: req.body.speaker
+    }
     Seminar.findByIdAndUpdate(req.params.id, updateSeminar, (err, updated) => {
         if(err) throw err;
         next();

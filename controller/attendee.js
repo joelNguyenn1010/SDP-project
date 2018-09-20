@@ -18,7 +18,7 @@ attendeeController.registerSeminar = (req, res, next) => {
 attendeeController.checksAvailability = (req, res, next) => {
     Seminar.findById({_id: req.body.seminarId}, (err, found) => {
         if(err) throw err;
-        if(found.attendees.length < found.capacity) {
+        if(found.attendees.length < found.capacity && req.body.email.length > 0 && req.body.name.length > 0 && req.body.phone.length > 0) {
             return next();
         } else {
             return res.render('attendee/outOfSpace.ejs');

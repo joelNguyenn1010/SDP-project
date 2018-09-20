@@ -22,3 +22,8 @@
     width: 30rem !important;
     position: relative;
 }
+
+ pre {
+    font-family: "Roboto" !important;
+    color: #5c6a77 !important
+}

@@ -4,27 +4,72 @@
 <%= error %> 
 <div class="container">
     
-<form action="/seminar/<%=seminar._id%>?_method=PUT" method="POST">
 
-    <label for="name">name</label>
-    <input type="text" name="name" id="name" value="<%= seminar.name %>">
-    <label for="abstract">abstract</label>
-    <input type="text" name="abstract" id="abstract" value="<%= seminar.abstract %>">
-    <label for="date">date</label>
-    <input type="date" name="date" id="date">
-    <label for="speaker">speaker</label>
-    <input type="text" name="speaker" id="speaker" value="<%= seminar.speaker %>">
-    <label for="time">time</label>
-    <input type="time" name="time" id="time" value="<%= seminar.time %>" >
-    <label for="duration">duration</label>
-    <input type="number" name="duration" id="duration" placeholder="mininus" value="<%= seminar.duration %>">
-    <label for="venue">venue</label>
-    <input type="text" name="venue" id="venue" value="<%= seminar.venue %>">
+
+
+<div class="container m-custom">
+<div class="animated fadeIn form-container">
+<form class="form-group w-50 mx-auto p-3 mt-4" action="/seminar/<%=seminar._id%>?_method=PUT" method="POST">
+    <fieldset>
+    <h1>Edit <%=seminar.name%></h1>
+    <div class="md-form mt-4 mb-4">
+    <label for="name">Seminar name</label>
+    <input type="text" name="name" id="name" class="form-control" value="<%= seminar.name %>">
+    </div>
+
+    
+    <div class="md-form mb-4">
+    <label for="duration">Duration (hour)</label>
+    <input type="number" name="duration" id="duration" max="24" class="form-control" value="<%= seminar.duration %>">
+    </div>
+    <div class="md-form mb-4">
+    <label for="speaker">Speaker</label>
+    <input type="text" name="speaker" id="speaker" class="form-control" value="<%= seminar.speaker %>">
+    </div>
+    <div class="md-form mb-4">
+    <input type="date" id="date" name="date" class="form-control" value="<%=seminar.date%>">
+    <label for="date"></lable>
+    </div>
+    
+    <div class="form-group mb-4">
+    <select required value="<%=seminar.time%>" name="time" class="form-control">
+    <option disabled>Time</option>
+    <option value="12:30">12:30</option>
+    <option value="02:30">02:30</option>
+    <option value="03:30">03:30</option>
+
+    </select>
+    </div>
+
+    <div class="md-form">
+    <label for="venue">Venue</label>
+    <input type="text" name="venue" id="venue" class="form-control" value="<%= seminar.venue %>">
+    </div>
+
+    <div class="md-form">
     <label for="capacity">Capacity</label>
-    <input type="number" name="capacity" id="capacity" value="<%= seminar.capacity %>">
-    <input type="submit" value="Change">
-</form>
+    <input type="number" name="capacity" id="capacity" class="form-control" value="<%= seminar.capacity %>">
+    </div>
 
+    <div class="md-form">
+    <textarea required type="text" id="abstract" name="abstract" class="md-textarea form-control" rows="7" ><%=seminar.abstract%></textarea>
+    <label for="abstract">Abstract</label>
+    </div>
+
+    <button class="mb-4 btn btn-primary">Add</button>
+
+          
+      <% if(error.length > 0 && error) { %>
+        <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> <p><%=error%></p>
+        </div>
+      <% } %>
+
+    </fieldset>
+</form>
+</div>
+</div>
 
 <form action="/seminar/<%= seminar._id %>?_method=DELETE" method="POST">
     <input type="submit" value="Delete">

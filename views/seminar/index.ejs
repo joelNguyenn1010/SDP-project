@@ -18,12 +18,9 @@
 <div class="md-form m-auto mw-100" alt="Max-width 100%">
     <input name="search" id="myInput" onkeyup="search()" class="form-control w-100" type="text" placeholder="Search for seminar" aria-label="Search">
 </div>
+<div class="table-responsive">
 
-
-
-
-
-<table class="animated fadeIn table table-striped" id="myTable" cellspacing="0">
+<table class="col-sm-12 animated fadeIn mw-100 table table-striped" alt="Max-width 100%" id="myTable" cellspacing="0">
 <thead> 
     <tr>
         <th onclick="sort()" scope="col"><a> Seminar <i class="fa fa-sort" aria-hidden="true"></i>  </a></th>
@@ -46,6 +43,7 @@
     </tbody> 
 </table>
 
+</div>
 <% } else { %>
 <p>There is no active seminar</p>
 <% } %>
