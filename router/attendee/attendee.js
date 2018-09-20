@@ -33,9 +33,4 @@ router.get('/attendee/navbar', (req, res) => {
     res.redirect('/seminar');
 })
 
-
-
-
-
-
 module.exports = router;
