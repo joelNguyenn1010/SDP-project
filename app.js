@@ -70,6 +70,10 @@ app.use(main);
 app.use(seminar);
 app.use(attendee);
 
+app.get("*", (req, res) => {
+	res.send('connect');
+});
+
 // app.listen(process.env.PORT, process.env.IP, () => {
 // 	console.log("Welcome to our web Apllication");
 // });

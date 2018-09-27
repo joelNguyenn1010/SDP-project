@@ -24,9 +24,11 @@
     <h4 class="card-title">Number of attendees:</a></h4>
     <p class="card-text"><%= seminar.attendees.length %>/<%= seminar.capacity %></p>
 
-    <a class="btn btn-primary" href="/attendee/seminar/<%=seminar._id%>">All Attendees</a>
     <a class="btn btn-primary" href="/attendee/new/<%=seminar._id%>">Register</a>
+    <% if(currentUser) { %>
+    <a class="btn btn-primary" href="/attendee/seminar/<%=seminar._id%>">All Attendees</a>
     <a class="btn btn-primary" href="/seminar/<%=seminar._id%>/edit">Edit</a>
+  <% } %>
   </div>
 </div>
 

@@ -40,13 +40,19 @@ seminarController.loadSeminar = (req, res, next) => {
 
 seminarController.findOneSeminar = (req, res, next) => {
     Seminar.findOne({_id : req.params.id}, (err, found) => {
+        console.log(found);
         if(err) {
             req.flash('error', err.message);
-            return res.redirect('back');
-        } 
-        req.seminar = found;
-        next();
+            return res.render('error/404.ejs')
+        } else if(found) {
+            req.seminar = found;
+            return next();
+        } else {
+            return res.render('error/404.ejs');
+        }
+
     });
+
 }
 
 seminarController.updateOneSeminar = (req, res, next) => {

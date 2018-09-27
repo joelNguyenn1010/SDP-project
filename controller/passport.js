@@ -25,7 +25,7 @@ passportMiddleware.isLoggin = (req, res, next) => {
        next();
     } else {
         req.flash("info", "You need to login in order to do that");
-        return res.redirect('/user/login');
+        return res.redirect('back');
     }
 }
 

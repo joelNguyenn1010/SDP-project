@@ -24,7 +24,7 @@ router.get('/user/register', (req, res) => {
 //LOG OUT
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/user/login");
+  res.redirect("back");
 });
 
 //ADD USER

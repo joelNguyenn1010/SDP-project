@@ -1,8 +1,0 @@
-{
-    "git.ignoreLimitWarning": true,
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}"
-    ],
-    "appService.deploySubpath": "",
-    "appService.defaultWebAppToDeploy": "/subscriptions/17036c8b-34db-495a-9e91-1b2e0220f567/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/seminar-uts"
-}

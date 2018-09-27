@@ -47,8 +47,9 @@
 <% } else { %>
 <p>There is no active seminar</p>
 <% } %>
-
-<a class="btn btn-primary" href="/seminar/new">Add</a>
+<% if(currentUser) { %>
+    <a class="btn btn-primary" href="/seminar/new">Add</a>
+<% } %>
 
 
 </div>
