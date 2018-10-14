@@ -25,6 +25,7 @@
     <tr>
         <th onclick="sort()" scope="col"><a> Seminar <i class="fa fa-sort" aria-hidden="true"></i> </a></th>
         <th onclick="sort()" scope="col"><a> Organiser <i class="fa fa-sort" aria-hidden="true"></i> </a></th>
+        <th onclick="sort()" scope="col"><a> Speaker <i class="fa fa-sort" aria-hidden="true"></i> </a></th>
 
         <th scope="col"><a> Venue <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
         <th scope="col"><a> Date <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
@@ -37,6 +38,7 @@
         <tr class='clickable-row hoverable' data-href='/seminar/<%= seminar._id %>'>
            <td><a><%= seminar.name %></a></td>
            <td><a> <%= seminar.organiser_name %></a></td>
+           <td><a> <%= seminar.speaker %></a></td>
             <td><a><%= seminar.venue %></a></td>
             <td><a><%= seminar.date.getDate() %>-<%= seminar.date.getMonth()+1 %>-<%= seminar.date.getFullYear() %></a></td>
             <td><a><%= seminar.time %></a></td>
