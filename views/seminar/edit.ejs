@@ -1,0 +1,86 @@
+<% include ../partials/header.ejs %>
+<%= error %>
+<div class="container">
+
+
+
+
+  <div class="container m-custom">
+    <div class="animated fadeIn form-container">
+      <form class="form-group w-50 mx-auto p-3 mt-4" action="/seminar/<%=seminar._id%>?_method=PUT" method="POST">
+        <fieldset>
+          <h1>Edit
+            <%=seminar.name%>
+          </h1>
+          <div class="md-form mt-4 mb-4">
+            <label for="name">Seminar name</label>
+            <input required type="text" name="name" id="name" class="form-control" value="<%= seminar.name %>" pattern=".{5,}" title="5 characters minimum">
+          </div>
+
+
+          <div class="md-form mb-4">
+            <label for="duration">Duration (hour)</label>
+            <input required type="number" name="duration" id="duration" max="24" class="form-control" value="<%= seminar.duration %>">
+          </div>
+          <div class="md-form mb-4">
+            <label for="speaker">Speaker</label>
+            <input required type="text" name="speaker" id="speaker" class="form-control" value="<%= seminar.speaker %>" pattern=".{5,}" title="5 characters minimum">
+          </div>
+
+
+          <div class="md-datepicker mt-2">
+            <label for="date">Date of Seminar</label>
+                <input required type="date" id="date" name="date" class="form-control" min="<%=currentDay%>" value="<%= seminar.date.getFullYear() %>-<%= ('0'+(seminar.date.getMonth()+1)).slice(-2) %>-<%= ('0'+seminar.date.getDate()).slice(-2)%>" />
+            </div>
+
+ 
+
+          <div class="md-time-picker mt-4">
+            <label for="time">Seminar Start Time</label>
+                    <input required type="time" id="time" name="time" class="form-control" value="<%=seminar.time%>">
+            </div>
+            
+          <div class="md-form">
+            <label for="venue">Venue</label>
+            <input required type="text" name="venue" id="venue" class="form-control" value="<%= seminar.venue %>" pattern=".{5,}" title="5 characters minimum">
+          </div>
+
+          <div class="md-form">
+            <label for="capacity">Capacity</label>
+            <input required type="number" name="capacity" id="capacity" class="form-control" value="<%= seminar.capacity %>" min="<%= seminar.capacity %>">
+          </div>
+
+          <div class="md-form">
+            <textarea required type="text" id="abstract" name="abstract" class="md-textarea form-control" rows="7" pattern=".{5,}" title="5 characters minimum"><%=seminar.abstract%></textarea>
+            <label for="abstract">Abstract</label>
+          </div>
+
+          <button class="mb-4 btn btn-primary">Save</button>
+
+       
+
+          <% if(error.length > 0 && error) { %>
+          <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Error!</strong>
+            <p>
+              <%=error%>
+            </p>
+          </div>
+          <% } %>
+
+        </fieldset>
+      </form>
+
+      <form class="form-group w-50 mx-auto p-3 " action="/seminar/<%= seminar._id %>?_method=DELETE" method="POST">
+        <button class="mb-4 btn btn-danger">Delete</button>
+      </form>
+
+
+    </div>
+  </div>
+
+ 
+
+</div>
+<% include ../partials/footer.ejs %>

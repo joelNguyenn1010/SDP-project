@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+
+<% if(success && success.length >0 ) { %>
+    <div class="alert alert-info mt-3" role="alert">
+            <%=success%>
+    </div>
+    <% } %>
+    
+
+<div class="container">
+    <div class="container m-custom">
+        <div class="animated fadeIn form-container">
+            <form class="form-group w-50 mx-auto p-3 mt-4" action="/user" method="POST">
+                <fieldset>
+                    <h1>Add new User
+                    </h1>
+                    <div class="md-form mt-4 mb-4">
+                        <label for="firstname">First Name</label>
+                        <input required type="text" name="firstname" id="firstname" class="form-control">
+                    </div>
+
+
+                    <div class="md-form mb-4">
+                        <label for="lastname">Last Name</label>
+                        <input required type="text" name="lastname" id="lastname" class="form-control">
+                    </div>
+
+
+
+                    <div class="md-form mb-4">
+                        <label for="phone">Phone Number</label>
+                        <input required type="number" name="phone" id="phone" class="form-control">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label for="email">Email (Username)</label>
+                        <input required type="email" name="username" id="email" class="form-control">
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <label for="password">Password</label>
+                        <input required type="password" name="password" id="password" class="form-control">
+                    </div>
+
+
+                    
+                    <div class="md-form mb-4">
+                        <select required name="role" class="mdb-select md-form colorful-select">
+                            <option value="sysadmin">System Admin</option>
+                            <option value="organiser">Seminar Organisers</option>
+                        </select>
+                    </div>
+
+                    <button class="mb-4 btn btn-primary">Add</button>
+
+
+
+
+                </fieldset>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<!--Body-->
+<% include ../partials/footer.ejs %>

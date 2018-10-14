@@ -1,0 +1,67 @@
+<% include ../partials/header %>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid mt-5">
+
+
+<% if(sysadmin.length > 0 && sysadmin) { %>
+
+<!-- Search form -->
+<div class="container">
+
+
+<div class="md-form m-auto mw-100" alt="Max-width 100%">
+    <input name="search" id="myInput" onkeyup="search()" class="form-control w-100" type="text" placeholder="Search for system admin" aria-label="Search">
+</div>
+<div class="table-responsive">
+
+<table class="col-sm-12 animated fadeIn mw-100 table table-striped" alt="Max-width 100%" id="myTable" cellspacing="0">
+<thead> 
+    <tr>
+        <th onclick="sort()" scope="col"><a> System Admin <i class="fa fa-sort" aria-hidden="true"></i>  </a></th>
+        <th scope="col"><a> Name <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
+        <th scope="col"><a> Phone Number <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
+  
+ 
+    </tr>
+    </thead> 
+    <tbody> 
+    <% sysadmin.forEach((seminar) => { %> 
+        <tr class='clickable-row hoverable' data-href='/user/<%=seminar._id%>/<%=seminar.email%>/sysadmin'>
+            <td><a><%= seminar.email %></a></td>
+           <td><a><%= seminar.name %></a></td>
+            <td><a><%= seminar.phone %></a></td>
+        </tr>
+    <% }) %>
+    </tbody> 
+</table>
+</div>
+</div>
+<% } else { %>
+<p>There is no system admin</p>
+<% } %>
+
+
+
+
+</div>
+<script src='/js/tablesort.js'></script>
+
+<!-- Include sort types you need -->
+<script src='/js/tablesort.number.js'></script>
+<script src='/js/tablesort.date.js'></script>
+
+<% include ../partials/JS/seminar-index %>
+
+
+
+
+
+<% include ../partials/footer %>

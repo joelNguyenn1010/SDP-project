@@ -1,0 +1,13 @@
+
+<p><%= error %></p>
+
+<form action="/user" method="post">
+    <input type="email" name="username" placeholder="Email">
+    <input type="password" name="password" placeholder="Password">
+    <select name="role">
+        <option value="sysadmin">System Admin</option>
+        <option value="organiser">Seminar Organisers</option>
+        <option value="hosts">Hosts</option>
+    </select>
+    <input type="submit" value="Register">
+</form>

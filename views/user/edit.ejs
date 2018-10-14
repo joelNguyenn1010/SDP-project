@@ -1,0 +1,83 @@
+<% include ../partials/header %>
+
+<% if(success && success.length >0 ) { %>
+<div class="alert alert-info mt-3" role="alert">
+    <%=success%>
+</div>
+<% } %>
+
+
+<div class="container">
+    <div class="container m-custom">
+        <div class="animated fadeIn form-container">
+            <form class="form-group w-50 mx-auto p-3 mt-4" action="/user/<%=user._id%>/<%=user.email%>/<%=type%>?_method=PUT"
+                method="POST">
+                <fieldset>
+                    <h1>Edit
+                        <%=user.name%>
+                    </h1>
+                    <div class="md-form mt-4 mb-4">
+                        <label for="name">Full Name</label>
+                        <input required type="text" name="name" id="name" class="form-control" value="<%=user.name%>">
+                    </div>
+
+
+
+                    <div class="md-form mb-4">
+                        <label for="phone">Phone Number</label>
+                        <input required type="number" name="phone" id="phone" class="form-control" value="<%=user.phone%>">
+                    </div>
+
+
+                    <button class="mb-4 btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-danger mb-4" data-toggle="modal" data-target="#modalConfirmDelete">Delete</button>
+
+                </fieldset>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+<!-- Button trigger modal-->      
+
+</div>
+
+<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+  <!--Content-->
+  <div class="modal-content text-center">
+    <!--Header-->
+    <div class="modal-header d-flex justify-content-center">
+      <p class="heading">Delete <%=user.name%></p>
+    </div>
+
+    <!--Body-->
+    <div class="modal-body">
+
+      <i class="fa fa-times fa-4x animated rotateIn"></i>
+
+    </div>
+
+
+    <!--Footer-->
+    <div class="modal-footer flex-center">
+        <form action="/user/<%=user._id%>/<%=type%>?_method=DELETE" method="POST">
+            <input type="hidden" value="<%=user._id%>" name="id">
+            <input type="hidden" value="<%=type%>" name="type">
+            <input type="hidden" value="<%=user.email%>" name="email">
+            <button class="btn btn-danger">Yes</button>
+        </form>
+      <a  class="btn btn-outline-primary" data-dismiss="modal">No</a>
+    </div>
+  </div>
+  <!--/.Content-->
+</div>
+</div>
+
+
+<!--Body-->
+<% include ../partials/footer.ejs %>

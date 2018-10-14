@@ -1,0 +1,48 @@
+.bg-navbar {
+    background-color: #214dc7 !important;
+}
+
+.bg-footer {
+    background-color: #4285f4 !important;
+}
+
+.m-custom {
+    margin-bottom: 10rem !important;
+    margin-top: 10rem !important;
+    position: relative;
+}
+
+
+.w-custom {
+    width: 50rem !important;
+    position: relative;
+  }
+
+.w-login-custom {
+    width: 30rem !important;
+    position: relative;
+}
+
+ pre {
+    font-family: "Roboto" !important;
+    color: #5c6a77 !important
+}
+
+#duration{
+    -moz-appearance: textfield;
+}
+
+#duration::-webkit-inner-spin-button {
+    display: none;
+  }
+
+#duration::-webkit-outer-spin-button,
+#duration::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .nametag {
+    text-align: center;
+    font-size: 200%;
+  }

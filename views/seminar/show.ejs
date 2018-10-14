@@ -1,0 +1,54 @@
+<% include ../partials/header.ejs  %>
+
+
+
+<div class="container-fluid mt-5">
+
+<div class="card w-custom m-auto mw-100" alt="Max-width 100%">
+
+  <div class="card-body">
+    <h1 class="card-title"><%= seminar.name %></h4>
+    <hr>
+    <h4 class="card-title">Info:</a></h4>
+    <pre><%= seminar.abstract %></pre>
+    <h4 class="card-title">Date:</a></h4>
+    <p class="card-text"><%= seminar.date.getDate() %>-<%= seminar.date.getMonth()+1 %>-<%= seminar.date.getFullYear() %></p>
+    <h4 class="card-title">Speaker:</a></h4>
+    <p class="card-text"><%= seminar.speaker %></p>
+    <h4 class="card-title">Time:</a></h4>
+    <p class="card-text"><%= seminar.time %></p>
+    <h4 class="card-title">Duration:</a></h4>
+    <p class="card-text"><%= seminar.duration %></p>
+    <h4 class="card-title">Venue:</a></h4>
+    <p class="card-text"><%= seminar.venue %></p>
+    <h4 class="card-title">Number of attendees:</a></h4>
+    <p class="card-text"><%= seminar.attendees.length %>/<%= seminar.capacity %></p>
+
+    <a class="btn btn-primary" href="/attendee/new/<%=seminar._id%>">Register</a>
+    
+
+    <% if(currentUser) { %>
+    <a class="btn btn-primary" href="/seminar/<%=seminar._id%>/edit">Edit</a>
+    <div class="dropdown show">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="nameTagLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Name tag
+      </a>
+      <div class="dropdown-menu" aria-labelledby="nameTagLink">
+        <a class="dropdown-item" onclick="window.open('/<%=seminar._id%>/nametags')">Print</a>
+        <!-- <a class="dropdown-item" href="/<%=seminar._id%>/nametags/download">Download as PDF</a> -->
+      </div>
+    </div>
+
+    <a class="btn btn-primary" href="/attendee/seminar/<%=seminar._id%>">All Attendees</a>
+
+  <% } %>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+<% include ../partials/footer.ejs  %>
+

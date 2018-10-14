@@ -1,0 +1,66 @@
+
+<% include ../partials/header %>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid mt-5">
+
+
+
+<% if(orginiser.length > 0 && orginiser) { %>
+    <div class="container">
+        <!-- Search form -->
+        <div class="md-form m-auto mw-100" alt="Max-width 100%">
+            <input name="search" id="myInput" onkeyup="search()" class="form-control w-100" type="text" placeholder="Search for organiser" aria-label="Search">
+        </div>
+        <div class="table-responsive">
+        
+        <table class="col-sm-12 animated fadeIn mw-100 table table-striped" alt="Max-width 100%" id="myTable" cellspacing="0">
+        <thead> 
+            <tr>
+                <th onclick="sort()" scope="col"><a> Organiser <i class="fa fa-sort" aria-hidden="true"></i>  </a></th>
+                <th scope="col"><a> Name <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
+                <th scope="col"><a> Phone <i class="fa fa-sort" aria-hidden="true"></i>  </a></th> 
+          
+         
+            </tr>
+            </thead> 
+            <tbody> 
+            <% orginiser.forEach((seminar) => { %> 
+                <tr class='clickable-row hoverable' data-href='/user/<%=seminar._id%>/<%=seminar.email%>/organiser'>
+                    <td><a><%= seminar.email %></a></td>
+                    <td><a><%= seminar.name %></a></td>
+                    <td><a><%= seminar.phone %></a></td>
+                </tr>
+            <% }) %>
+            </tbody> 
+        </table>
+        
+        </div>
+        <% } else { %>
+        <p>There is no orginser</p>
+        <% } %>
+    
+    
+    </div>
+    
+</div>
+<script src='/js/tablesort.js'></script>
+
+<!-- Include sort types you need -->
+<script src='/js/tablesort.number.js'></script>
+<script src='/js/tablesort.date.js'></script>
+
+<% include ../partials/JS/seminar-index %>
+
+
+
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <!-- Custom CSS -->
+    <link href="/css/style.css" type="text/css" link rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    <title>SDP</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- SCRIPTS -->
+
+   
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <% attendees.forEach((attendee)=>{ %>
+
+
+            <div class="col-xl-6 col-6 col-sm-6 col-6 col-md-6 col-lg-6 mt-2">
+
+                <div style="position: relative;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                min-width: 0;
+                height:100px;
+                word-wrap: break-word;
+                background-color: #fff;
+                background-clip: border-box;
+                border: 1px solid rgba(0, 0, 0, 0.125);
+                border-radius: 0.25rem;">
+
+                    <div class="card-body">
+                        <div class="card-box">
+                            <h1 class="nametag">
+                                <%=attendee.name%>
+                            </h1>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <%}) %>
+
+        </div>
+    </div>
+
+
+
+    <script src='/js/nametag.js'></script>
+
+</body>
+
+</html>

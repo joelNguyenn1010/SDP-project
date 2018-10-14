@@ -1,0 +1,72 @@
+
+
+<% include ../partials/header.ejs %>
+
+
+      
+
+
+<div class="container m-custom">
+<div class="animated fadeIn form-container">
+<form class="form-group w-50 mx-auto p-3 mt-4" action="/seminar" method="POST">
+    <fieldset>
+    <h1>New Seminar</h1>
+    <div class="md-form mt-4 mb-4">
+    <label for="name">Seminar name</label>
+    <input required type="text" name="name" id="name" class="form-control" pattern=".{5,}" title="5 characters minimum">
+    </div>
+
+    
+    <div class="md-form mb-4">
+    <label for="duration">Duration (hour)</label>
+    <input required type="number" name="duration" id="duration" onkeydown="javascript: return event.keyCode == 69 ? false : true" max="24" class="form-control">
+    </div>
+    <div class="md-form mb-4">
+    <label for="speaker">Speaker</label>
+    <input required type="text" name="speaker" id="speaker" class="form-control" pattern=".{5,}" title="5 characters minimum">
+    </div>
+
+
+    <div class="md-datepicker mt-2">
+		<label for="date">Date of Seminar</label>
+        <input required type="date" id="date" name="date" class="form-control" />
+    </div>
+    
+    <div class="md-time-picker mt-4">
+		<label for="time">Seminar Start Time</label>
+            <input required type="time" id="time" name="time" class="form-control" >
+    </div>
+
+
+   
+
+        
+
+    <div class="md-form">
+    <label for="venue">Venue</label>
+    <input required type="text" name="venue" id="venue" class="form-control">
+    </div>
+
+    <div class="md-form">
+    <label for="capacity">Capacity</label>
+    <input required type="number" name="capacity" id="capacity" min="1" class="form-control" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+    </div>
+
+    <div class="md-control">
+            <label for="abstract">Abstract</label>
+            <textarea required type="text" id="abstract" name="abstract" class="md-textarea form-control" rows="7" pattern=".{5,}" title="5 characters minimum"></textarea>
+   
+    </div>
+
+    <button class="mb-4 btn btn-primary">Add</button>
+
+          
+    
+
+    </fieldset>
+</form>
+</div>
+</div>
+
+<script type="text/javascript" src="/js/seminar/new.js"></script>
+<% include ../partials/footer.ejs %>

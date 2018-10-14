@@ -1,0 +1,53 @@
+
+
+<% include ../partials/header.ejs %>
+
+<div class="container">
+<div class="row">
+<div class="card col-lg-7 mr-3 mt-4 mx-auto">
+<form action="/attendee" method="POST" class="text-center p-5">
+    <h1 class="mb-4">Register</h1>
+    <input required type="text" name="name" id="name" class="form-control mb-4" placeholder="Full name">
+    <input required type="number" name="phone" id="phone" maxLength="10" class="form-control mb-4" placeholder="Phone number">
+    <input required type="email" name="email" id="email" class="form-control mb-4" placeholder="Email">
+    <input type="hidden" name="seminarId" value="<%=seminar._id%>">
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="subcribe" name="subcribe">
+    </div>
+
+    <button class="btn btn-primary my-4 btn-block" type="submit">Submit</button>
+
+</form>
+
+</div>
+
+<div class="card col-lg-4 mt-4">
+
+
+<div class="card-body">
+<h1 class="card-title"><%= seminar.name %></h4>
+<hr>
+<h4 class="card-title">Info:</a></h4>
+<p class="card-text"><%= seminar.abstract %></p>
+<h4 class="card-title">Date:</a></h4>
+<p class="card-text"><%= seminar.date.getDate() %>-<%= seminar.date.getMonth()+1 %>-<%= seminar.date.getFullYear() %></p>
+<h4 class="card-title">Speaker:</a></h4>
+<p class="card-text"><%= seminar.speaker %></p>
+<h4 class="card-title">Time:</a></h4>
+<p class="card-text"><%= seminar.time %></p>
+<h4 class="card-title">Duration:</a></h4>
+<p class="card-text"><%= seminar.duration %></p>
+<h4 class="card-title">Venue:</a></h4>
+<p class="card-text"><%= seminar.venue %></p>
+<h4 class="card-title">Number of attendees:</a></h4>
+<p class="card-text"><%= seminar.attendees.length %>/<%= seminar.capacity %></p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script></script>
+<% include ../partials/footer.ejs %>
