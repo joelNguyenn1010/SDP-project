@@ -12,7 +12,9 @@
     position: relative;
 }
 
-
+p{
+    white-space: pre-wrap;
+}
 .w-custom {
     width: 50rem !important;
     position: relative;

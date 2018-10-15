@@ -9,8 +9,8 @@
   <div class="card-body">
     <h1 class="card-title"><%= seminar.name %></h4>
     <hr>
-    <h4 class="card-title">Info:</a></h4>
-    <pre><%= seminar.abstract %></pre>
+    <h4 class="card-title" id="d">Info:</a></h4>
+    <p><%= seminar.abstract %></p>
     <h4 class="card-title">Date:</a></h4>
     <p class="card-text"><%= seminar.date.getDate() %>-<%= seminar.date.getMonth()+1 %>-<%= seminar.date.getFullYear() %></p>
     <h4 class="card-title">Speaker:</a></h4>
@@ -49,6 +49,7 @@
 </div>
 
 
+<script src='/js/seminar/show.js'></script>
 
 <% include ../partials/footer.ejs  %>
 
