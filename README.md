@@ -24,7 +24,7 @@ npm run start
 ## Members
 
 Ngoc Anh Nguyen - Project Leader/Developer/UI
-Shishir Shrestha - Technical Lead/Developer
+Timothy Tran - Technical Lead/Developer
 Mawgee Okura – Quality Assurance/Developer/UI
 Robin Roqueza - Documentation/Developer
 Shishir Shrestha – Librarian/Developer
